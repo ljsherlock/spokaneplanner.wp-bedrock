@@ -6,6 +6,7 @@
 [subrepo]
 	remote = git@github.com:ljsherlock/spokaneplanner.wp.gutenberg-blocks-plugin.git
 	branch = master
-	commit = 
+	commit = aed2c032fcaa848eb213c4b9c31d8b97a7f0854f
 	method = merge
 	cmdver = 0.4.1
+	parent = e08bc07a9f35396b39cc214392481d95ed70af3e
