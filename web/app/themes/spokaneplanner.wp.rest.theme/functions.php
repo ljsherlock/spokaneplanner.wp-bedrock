@@ -9,6 +9,8 @@ ContentTypes\Menus::register();
 ContentTypes\Customizer::setup();
 ContentTypes\Images::setup();
 ContentTypes\Ajax::setup();
+ContentTypes\Editor::setup();
+
 ContentTypes\RESTFields\Block::registerFields();
 ContentTypes\RESTFields\Menu::registerFields();
 
