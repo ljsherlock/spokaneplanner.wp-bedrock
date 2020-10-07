@@ -6,7 +6,7 @@
 [subrepo]
 	remote = git@github.com:ljsherlock/spokaneplanner.wp.rest.theme.git
 	branch = master
-	commit = 33fc50a1e9306f25ed879ac3ad483f394bc5e013
+	commit = 76dd9603a643b706dbee0cffb9a5ae9248da266f
 	method = merge
 	cmdver = 0.4.1
-	parent = 39c0c2867390ff83f3c84fa244de96f4e880325b
+	parent = f0163890cfdd61c520467d14ca7e643321b1c408
