@@ -1,0 +1,23 @@
+{
+  "name": "common-gutenberg-blocks",
+  "version": "1.0.1",
+  "main": "index.ts",
+  "repository": "git@github.com:ljsherlock/common-gutenberg-blocks.git",
+  "author": "ljsherlock <developer@ljsherlock.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@wordpress/block-editor": "^3.9.0",
+    "ljsherlock-progressive-image": "^1.0.6",
+    "primitive-components": "^0.1.7",
+    "react": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "@wordpress/element": "^2.13.1",
+    "babel-jest": "^25.3.0",
+    "eslint": "^6.8.0",
+    "jest": "^25.3.0",
+    "react-test-renderer": "^16.13.1",
+    "ts-jest": "^25.3.1"
+  }
+}

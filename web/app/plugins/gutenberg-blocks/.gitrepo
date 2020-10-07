@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github.com:ljsherlock/spokaneplanner.wp.gutenberg-blocks-plugin.git
+	branch = production
+	commit = e9e9d23b67b90b7140cf769b483d02a909b29fd5
+	parent = a0228d9c14e42668aab26b9e2babd902fde47c15
+	method = merge
+	cmdver = 0.4.1

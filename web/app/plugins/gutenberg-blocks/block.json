@@ -1,0 +1,21 @@
+{
+    "name": "ljsherlock22/isoblock",
+    "title": "Hydreate Test",
+    "category": "common",
+    "icon": "star",
+    "description": "Shows warning, error or success notices  ...",
+    "keywords": [
+        "alert",
+        "message"
+    ],
+    "textDomain": "josh-isoblock",
+    "attributes": {
+        "defaultValue": {
+            "type": "string"
+        },
+        "blockId": {
+            "type": "string"
+        }
+    },
+    "editorScript": "build/index.js"
+}

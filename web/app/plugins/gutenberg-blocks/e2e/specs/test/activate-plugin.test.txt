@@ -1,0 +1,13 @@
+import {
+  getEditedPostContent,
+  insertBlock,
+} from '@wordpress/e2e-test-utils';
+
+it( 'Wrapper block should be available', async () => {
+  await insertBlock( 'Progressive Image' );
+
+  // Check if block was inserted
+  expect( await page.$( '[data-type="ljsherlock/progressive-image"]' ) ).not.toBeNull();
+
+  expect( await getEditedPostContent() ).toMatchSnapshot();
+} );
