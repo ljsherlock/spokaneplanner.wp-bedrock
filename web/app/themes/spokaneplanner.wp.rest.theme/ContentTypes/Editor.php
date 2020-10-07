@@ -1,6 +1,6 @@
 <?php
 
-namespace ContentTypes\RESTFIelds;
+namespace ContentTypes;
 
 class Editor {
   /**
