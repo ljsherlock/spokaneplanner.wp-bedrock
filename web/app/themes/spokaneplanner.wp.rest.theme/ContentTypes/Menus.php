@@ -20,8 +20,6 @@ class Menus {
       'primary' => 'Primary',
       'secondary' => 'Secondary',
       'footer' => 'Footer',
-      'work-categories' => 'Work Categories',
-      'services' => 'Services'
     );
     register_nav_menus($navs); 
   }

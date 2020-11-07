@@ -4,7 +4,7 @@ import { RichText } from "@wordpress/block-editor"
 import ServiceContent from '../components/ServiceContent'
 import { Copy, Heading } from 'primitive-components'
 
-import progressiveImageBlock from '../ProgressiveImage'
+// import progressiveImageBlock from '../ProgressiveImage'
 
 import 'tachyons/css/tachyons.min.css'
 import 'flexboxgrid/css/flexboxgrid.min.css'
@@ -26,6 +26,10 @@ const attributes = {
   header: {
     type: 'string',
     selector: 'js-service-header',
+    "level": {
+			"type": "number",
+			"default": 2
+		},
   },
   content: {
     type: 'string',
@@ -112,14 +116,15 @@ const edit: FunctionComponent<editProps> = ({
           Deconstructed the render (return UI) so that the block can 
           be used in this way.
         */}
-        <progressiveImageBlock.Render
+        {/* <progressiveImageBlock.Render
           setProgressiveImageDesktop={setProgressiveImageDesktop}
           setProgressiveImageTiny={setProgressiveImageTiny}
+          setImageSizes={setImageSizes}
           progressiveImageDesktop={progressiveImageDesktop}
           progressiveImageTiny={progressiveImageTiny}
           className={className}
           blockId={blockId}
-        />
+        /> */}
 
       </React.Fragment>
 
@@ -138,6 +143,19 @@ export default {
   name: 'ljsherlock/test',
   title: 'Serivce Section (top)',
   category: 'common',
+  supports: {
+		"anchor": true,
+		"className": false,
+		"lightBlockWrapper": true,
+		"__experimentalSelector": {
+			"core/heading/h1": "h1",
+			"core/heading/h2": "h2",
+			"core/heading/h3": "h3",
+			"core/heading/h4": "h4",
+			"core/heading/h5": "h5",
+			"core/heading/h6": "h6"
+		}
+	},
   attributes,
   save,
   edit,

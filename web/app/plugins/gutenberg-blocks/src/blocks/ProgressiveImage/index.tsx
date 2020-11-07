@@ -12,33 +12,40 @@ const attributes = {
     required: false,
     default: 'https://develop.anomalous.react/app/uploads/2019/03/Visuals-Service-page-image-1-1985-3-32x21.jpg'
   },
-  progressiveImageDesktop: {
+  progressiveImageFull: {
     type: 'string',
     required: false,
     default: 'https://develop.anomalous.react/app/uploads/2019/03/Visuals-Service-page-image-1-1985-3-1920x1280.jpg'
+  },
+  imageSizes: {
+    type: 'object',
+    required: false,
+    default: {}
   },
 }
 
 interface getImageButtonProps {
   onClick: () => void
-  progressiveImageDesktop: string
+  progressiveImageFull: string
   progressiveImageTiny: string
+  imageSizes: null | {any: string}
   className: string
   blockId: string
 }
 
 const GetImageButton: FunctionComponent<getImageButtonProps> = ({
   onClick,
-  progressiveImageDesktop,
+  progressiveImageFull,
   progressiveImageTiny,
+  imageSizes,
   className,
   blockId,
 }: getImageButtonProps) => (
   <ProgressiveImage
-    progressiveImageDesktop={progressiveImageDesktop}
+    progressiveImageFull={progressiveImageFull}
     progressiveImageTiny={progressiveImageTiny}
     progressiveImageRatio='4x3' 
-    //slide-in-image
+    imageSizes={imageSizes}
     id={blockId}
     className={`${className} z-1 text-block-image-1 progressive-image-background`}
     onClick={onClick}
@@ -53,8 +60,9 @@ const GetImageButton: FunctionComponent<getImageButtonProps> = ({
 interface editProps {
   attributes: {
     blockId: string
-    progressiveImageDesktop: string
+    progressiveImageFull: string
     progressiveImageTiny: string
+    imageSizes: null | {any: string}
   }
   setAttributes: ({}) => void
   className: string
@@ -69,14 +77,16 @@ const edit: FunctionComponent<editProps> = ({
 }: editProps) => {
   const {
     blockId,
-    progressiveImageDesktop,
+    progressiveImageFull,
     progressiveImageTiny,
+    imageSizes,
   }: editProps['attributes'] = attributes
   
   const setBlockId = (blockId: string) => setAttributes({ blockId })
-  const setProgressiveImageDesktop = (progressiveImageDesktop: string) => setAttributes({ progressiveImageDesktop })
+  const setprogressiveImageFull = (progressiveImageFull: string) => setAttributes({ progressiveImageFull })
   const setProgressiveImageTiny = (progressiveImageTiny: string) => setAttributes({ progressiveImageTiny })
   const setClassName = (className: string) => setAttributes({ className })
+  const setImageSizes = (imageSizes: {any: any}) => setAttributes({ imageSizes })
 
   if (clientId !== blockId) {
     setBlockId(clientId)
@@ -84,10 +94,12 @@ const edit: FunctionComponent<editProps> = ({
 
   return (
     <Render
-      setProgressiveImageDesktop={setProgressiveImageDesktop}
+      setprogressiveImageFull={setprogressiveImageFull}
       setProgressiveImageTiny={setProgressiveImageTiny}
-      progressiveImageDesktop={progressiveImageDesktop}
+      setImageSizes={setImageSizes}
+      progressiveImageFull={progressiveImageFull}
       progressiveImageTiny={progressiveImageTiny}
+      imageSizes={imageSizes}
       className={className}
       blockId={blockId}
     />
@@ -95,18 +107,22 @@ const edit: FunctionComponent<editProps> = ({
 }
 
 const Render = ({
-  setProgressiveImageDesktop,
+  setprogressiveImageFull,
   setProgressiveImageTiny,
-  progressiveImageDesktop,
+  setImageSizes,
+  progressiveImageFull,
   progressiveImageTiny,
+  imageSizes,
   className,
   blockId,
 }) => (
   <MediaUploadCheck>
     <MediaUpload
       onSelect={(media) => {
-        setProgressiveImageDesktop(media.sizes.desktop.url)
+        console.log('media', media)
+        setprogressiveImageFull(media.sizes.fullWidthMedium.url)
         setProgressiveImageTiny(media.sizes.tiny.url)
+        setImageSizes(media.sizes)
       }}
       allowedTypes="image"
       type="image"
@@ -114,8 +130,9 @@ const Render = ({
         ({ open }) => (
           <GetImageButton
             onClick={open}
-            progressiveImageDesktop={progressiveImageDesktop}
+            progressiveImageFull={progressiveImageFull}
             progressiveImageTiny={progressiveImageTiny}
+            imageSizes={imageSizes}
             className={className}
             blockId={blockId}
           />
@@ -136,6 +153,7 @@ export default {
   name: 'ljsherlock/progressive-image',
   title: 'Progressive Image',
   category: 'common',
+  icon: 'image',
   attributes,
   save,
   edit,

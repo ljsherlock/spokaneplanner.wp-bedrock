@@ -7,7 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "@wordpress/block-editor": "^3.9.0",
-    "ljsherlock-progressive-image": "^1.0.6",
+    "ljsherlock-progressive-image": "^1.0.8",
     "primitive-components": "^0.1.7",
     "react": "^16.13.1"
   },

@@ -8,7 +8,6 @@ Includes\CMB2::init();
 ContentTypes\Menus::register();
 ContentTypes\Customizer::setup();
 ContentTypes\Images::setup();
-ContentTypes\Ajax::setup();
 ContentTypes\Editor::setup();
 
 ContentTypes\RESTFields\Block::registerFields();
@@ -16,7 +15,7 @@ ContentTypes\RESTFields\Menu::registerFields();
 
 // There is a strange bug where my custom image sizes will only 
 // appear if the a file field is created.
-ContentTypes\CustomFields::register();
+// ContentTypes\CustomFields::register();
 
 // ContentTypes\CustomPostTypes\Space::registerPostType();
 // add_action( 'init', array('ContentTypes\CustomPostTypes\TeamMembers', 'registerPostType'));
