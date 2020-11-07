@@ -12,12 +12,12 @@ class Menu extends \ContentTypes\CustomFields {
     add_action( 'rest_api_init', function () {
       register_rest_route( 'wp/v2', 'menu', array(
         'methods' => 'GET',
-        'callback' => array(__CLASS__, 'getPrimaryMenu'),
+        'callback' => array(__CLASS__, 'getMenu'),
       ));
     });
   }
 
-  public static function getPrimaryMenu(WP_REST_Request $request) {
+  public static function getMenu($request) {
     $name = $request['name'];
 
     // Replace your menu name, slug or sID carefully
