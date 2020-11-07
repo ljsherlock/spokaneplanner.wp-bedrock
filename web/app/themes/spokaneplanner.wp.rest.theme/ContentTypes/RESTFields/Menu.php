@@ -28,13 +28,7 @@ class Menu extends \ContentTypes\CustomFields {
       $slug = basename( get_permalink($menu_item->object_id) );
       $menu_item->slug = $slug;
     }
+
     return $menu_items;
   }
 }
-
-add_action( 'rest_api_init', function () {
-      register_rest_route( 'myroutes', '/menu', array(
-      'methods' => 'GET',
-      'callback' => 'get_menu',
-  ) );
-} );
